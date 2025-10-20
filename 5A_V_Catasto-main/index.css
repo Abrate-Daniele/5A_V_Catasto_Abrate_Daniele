@@ -1,0 +1,119 @@
+:root{
+    font-size: 14pt;
+    font-family: monospace;
+
+    --c1:#03658C;
+    --c2:#023059;
+    --c3:#F29F05;
+    --c4:#F28705;
+    --c5:#F23005;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    background-color: #03658C;
+
+    header, footer{
+        color:var(--c4)
+    }
+
+    header{
+        width: 100%;
+
+        h1{ text-align: center; }
+        h3{ text-align: left; padding-left:5px; text-transform: capitalize; }
+        h4{ text-align: right; }
+    }
+
+    main{
+        height: 65dvh;
+        width: 100%;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        scrollbar-color: var(--c5) var(--c3);
+
+        >div{
+            margin:5px;
+            width: 80%;
+            border:1px solid black;
+            padding: 5px;
+            background-color: var(--c3);
+
+            &:hover{ opacity: 0.8; }
+
+            >a{
+                display: block;
+                width: 200px;
+                height: 100px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                margin-top: 10px;
+            }
+
+            .piccola{
+                background-image: url("img/piccola.png");
+            }
+            .media{
+                background-image: url("img/media.png");
+            }
+            .grande{
+                background-image: url("img/grande.png");
+            }
+
+            .pmezza{
+                color:var(--c5);
+            }
+            &.selected{
+                border: 3px solid var(--c5);
+            }
+        }
+    }
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom:5px;
+
+        a{
+            background-color: var(--c5);
+            font-size: 2em;
+            margin-left:10px;
+
+            &:hover{ opacity: 0.7; }
+        }
+    }
+    
+    dialog{
+        background-color: var(--c2);
+        padding: 50px;
+        color:white;
+
+        input, button{
+            font-size: 20pt;
+        }
+
+        button{
+            margin-top:10px;
+            background-color: var(--c1);
+            color: white;
+            padding: 15px;
+        }
+    }
+
+    footer>div{
+        background-color: #023059;
+        text-align: center;
+        color:white;
+        padding: 5px;
+        width: calc(100vw - 10px);
+    }
+}
